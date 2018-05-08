@@ -33,7 +33,7 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/Devristo/phpws"
+      "url": "https://github.com/eulogix/phpws"
     },
     {
       "type": "vcs",
