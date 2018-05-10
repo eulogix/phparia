@@ -107,21 +107,21 @@ class Channels extends MediaBase
         $uri = 'channels';
         try {
             $response = $this->client->getEndpoint()->post($uri, [
-                'form_params' => [
-                    'endpoint' => $endpoint,
-                    'extension' => $extension,
-                    'context' => $context,
-                    'priority' => $priority,
-                    'label' => $label,
-                    'app' => $app,
-                    'appArgs' => $appArgs,
-                    'callerId' => $callerId,
-                    'timeout' => $timeout,
-                    'channelId' => $channelId,
-                    'otherChannelId' => $otherChannelId,
-                    'formats' => $formats,
-                    'variables' => array_map('strval', $variables),
-                ]
+                    \GuzzleHttp\RequestOptions::JSON => [
+                        'endpoint' => $endpoint,
+                        'extension' => $extension,
+                        'context' => $context,
+                        'priority' => $priority,
+                        'label' => $label,
+                        'app' => $app,
+                        'appArgs' => $appArgs,
+                        'callerId' => $callerId,
+                        'timeout' => $timeout,
+                        'channelId' => $channelId,
+                        'otherChannelId' => $otherChannelId,
+                        'formats' => $formats,
+                        'variables' => array_map('strval', $variables)
+                    ]
             ]);
         } catch (RequestException $e) {
             $this->processRequestException($e);
